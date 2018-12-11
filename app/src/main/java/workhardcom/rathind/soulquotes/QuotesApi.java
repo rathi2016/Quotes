@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 
 public class QuotesApi {
-    private static final String url= "http://quotes.rest/";
+    private static final String url= "http://api.forismatic.com/api/1.0/";
     public static QuotesService quotesService = null;
 
 
@@ -31,8 +31,8 @@ public class QuotesApi {
 
 
  public interface QuotesService{
-     @GET("qod.json")
-     Call<QuoteOfTheDay> getContents();
+     @GET("?method=getQuote&format=json&lang=en")
+     Call<RandomQuotes> getContents();
 
  }
 
