@@ -33,7 +33,7 @@ class QuoteOfTheDay : AppWidgetProvider() {
             val widgetText = context.getString(R.string.appwidget_text)
             // Construct the RemoteViews object
             val views = RemoteViews(context.packageName, R.layout.quote_of_the_day)
-            views.setTextViewText(R.id.appwidget_text, widgetText)
+            views.setTextViewText(R.id.quotesWidgetTxt, widgetText)
 
             // Instruct the widget manager to update the widget
             appWidgetManager.updateAppWidget(appWidgetId, views)

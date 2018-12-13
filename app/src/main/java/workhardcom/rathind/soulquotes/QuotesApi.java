@@ -29,7 +29,6 @@ public class QuotesApi {
     }
 
 
-
  public interface QuotesService{
      @GET("?method=getQuote&format=json&lang=en")
      Call<RandomQuotes> getContents();
