@@ -38,7 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/quotes" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/share"
         android:layout_width="65dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"

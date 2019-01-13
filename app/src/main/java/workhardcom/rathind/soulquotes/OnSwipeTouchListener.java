@@ -1,13 +1,11 @@
 package workhardcom.rathind.soulquotes;
 
 import android.content.Context;
-import android.support.v4.view.GestureDetectorCompat;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.GestureDetector.SimpleOnGestureListener;
-import android.widget.Toast;
 
 public class OnSwipeTouchListener implements OnTouchListener {
     private final GestureDetector gestureDetector;
