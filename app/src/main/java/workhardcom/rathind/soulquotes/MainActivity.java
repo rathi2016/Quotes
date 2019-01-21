@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ConstraintLayout rootContent;
     private FloatingActionButton share;
-
+    private int count = 1;
 
 
 
@@ -57,13 +57,13 @@ public class MainActivity extends AppCompatActivity {
 //        Share Floating button
         share = findViewById(R.id.share);
 
-        getBacground();
         getRandomApi();
         share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Snackbar.make(v, "Share button clicked", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                getBacground();
                 takeScreenshot();
 
 
@@ -90,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void shareScreenshot(File file) {
         Uri photoUri =FileProvider.getUriForFile(MainActivity.this,getString(R.string.file_provider_authority), file);
-//        Uri uri = Uri.fromFile(file);//Convert file path into Uri for sharing
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_SEND);
         intent.setType("image/*");
@@ -127,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     public void onSwipeLeft() {
+                        getBacground();
                         getRandomApi();
                         Toast.makeText(MainActivity.this, "left", Toast.LENGTH_SHORT).show();
                     }
@@ -146,8 +146,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getBacground() {
+        count ++;
+
+
         rootContent = findViewById(R.id.bgimage);
-        rootContent.setBackground(ContextCompat.getDrawable(this,R.drawable.picsart4));
+        switch(count){
+            case 1:
+                rootContent.setBackground(ContextCompat.getDrawable(this,R.drawable.picsart4));
+                break;
+            case 2:
+                rootContent.setBackground(ContextCompat.getDrawable(this,R.drawable.picsart3));
+                break;
+            case 3:
+                rootContent.setBackground(ContextCompat.getDrawable(this,R.drawable.picsart2));
+                break;
+            case 4:
+                rootContent.setBackground(ContextCompat.getDrawable(this,R.drawable.picsart5));
+                break;
+                default:
+                    if (count > 4){
+                        count = 1;
+                        rootContent.setBackground(ContextCompat.getDrawable(this,R.drawable.picsart4));
+
+                    }
+
+        }
     }
 
 }
