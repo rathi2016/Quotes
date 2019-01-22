@@ -39,9 +39,11 @@ class QuoteOfTheDay : AppWidgetProvider() {
 
         internal fun updateAppWidget(context: Context, appWidgetManager: AppWidgetManager,
                                      appWidgetId: Int) {
+
+
             // Construct the RemoteViews object
             val views = RemoteViews(context.packageName, R.layout.quote_of_the_day)
-            views.setTextViewText(R.id.quotesWidgetTxt, Integer.toString(appWidgetId))
+            views.setTextViewText(R.id.quotesWidgetTxt, "quotes should come here!!")
 
             // Instruct the widget manager to update the widget
             appWidgetManager.updateAppWidget(appWidgetId, views)

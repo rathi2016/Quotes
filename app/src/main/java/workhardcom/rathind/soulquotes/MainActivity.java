@@ -56,14 +56,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 //        Share Floating button
         share = findViewById(R.id.share);
-
+        getBacground();
         getRandomApi();
         share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Snackbar.make(v, "Share button clicked", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                getBacground();
                 takeScreenshot();
 
 
@@ -147,7 +146,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void getBacground() {
         count ++;
-
 
         rootContent = findViewById(R.id.bgimage);
         switch(count){
